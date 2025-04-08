@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	
+
+<meta charset="utf-8">
+<title>作品展示</title>
+	<style>
+		
+	body{ background-color:#EFEFEF;}
+	.lanren{width:1000px;overflow:hidden;margin:0 auto;}
+	.flip-3d { 
+	  perspective: 1200px; width: 33%; float: left;  
+	}
+	.flip-3d figure { 
+	  position: relative; 
+	  transform-style: preserve-3d; 
+	  transition: 1s transform;
+	  font-size: 1.6rem;
+	  margin:25px;
+	}
+	.flip-3d figure img { 
+	  width: 100%; height: auto; 
+	}
+	.flip-3d figure figcaption { 
+	  position: absolute; 
+	  width: 100%; height: 100%; top: 0; 
+	  transform: rotateY(.5turn) translateZ(1px); 
+	  background: rgba(255,255,255,0.9); 
+	  text-align: center; 
+	  padding-top: 45%; 
+	  opacity: 0.6; 
+	  transition: 1s .5s opacity; 
+	}
+	.flip-3d:hover figure { transform: rotateY(.5turn); }
+	.flip-3d:hover figure figcaption {
+	opacity: 1;
+	font-size: x-large;
+}
+	.flip-3d figure:after { 
+	  content: " "; display: block;
+	  height: 8vw; width: 100%; 
+	  transform: rotateX(90deg); 
+	  background-image:radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); 
+	}
+	@media screen and (max-width: 800px) { 
+	  #flip-3d { perspective-origin: center top; }
+		div#flip-3d figure { 
+	    float: none; 
+	    width: 50%; 
+	    margin: 0 auto; 
+	    margin-bottom: 12vw; 
+	  }
+	 .flip-3d figure figcaption{font-size: 0.8rem;}
+		div#flip-3d figure:last-child { display: none; }
+		
+	}
+    .navindex {
+	padding-top: 90px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A21.3.0.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 0 20px;
+	padding-bottom: 30px;
+	visibility: visible;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navwlop {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A22.2.0.png);
+	background-repeat: no-repeat;
+	background-position: 0% 15px;
+	background-size: contain;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	padding-bottom: 25px;
+}
+    .navintro {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 90px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A23.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-bottom: 0px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navshow {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 97px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A24.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navindex:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navwlop:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navintro:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navshow:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navwel {
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A25.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0% 5px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navwel:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navother {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A26.5.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0% 28px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	padding-bottom: 22px;
+}
+    .navother:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navzs1 {
+	-webkit-transition: opacity 1秒;
+	-o-transition: opacity 1秒;
+
+	transition: opacity 1秒;
+}
+    .navzs1:hover {
+	-webkit-opacity: 0.6;
+	opacity: 0.6;
+}
+    </style>
+	<style type="text/css">
+	
+
+    body{
+	background: url("../image/首页背景.jpg") no-repeat center center fixed;
+	/*兼容浏览器版本*/
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	}
+    a {
+	color: #78B2D6;
+	text-decoration: none;
+}
+		
+    </style>
+
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+	
+
+    <style>
+
+        body {
+
+            margin: 0px;
+
+           
+
+        }
+
+        #div1 {
+
+            width: 100%;
+
+            height: 50px;
+
+            background: rgba(50, 161, 235, 0.966);
+
+        }
+
+        #div2 {
+
+            background-image: url(../image/首页背景.jpg);
+
+            position:fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width:100%;
+
+            height:100%;
+
+            min-width: 1000px;
+
+            z-index:-10;
+
+            zoom: 1;
+
+            background-color: #fff;
+
+            background-repeat: no-repeat;
+
+            background-size: cover;
+
+            -webkit-background-size: cover;
+
+            -o-background-size: cover;
+
+            background-position: center 0;
+
+        }
+
+        #photo_box{
+
+            width: 280px;
+
+            height: 400px;
+
+            position: fixed;
+
+            left: 0;
+
+            right: 0;
+
+            top:0;
+
+            bottom: 0;
+
+            margin: 200px auto;
+
+            transform-style: preserve-3d;/*表示所有子元素在3D空间中呈现*/
+
+            transform: rotateX(-5deg) rotateY(0deg);
+
+            animation: run 30s linear infinite;/*循环执行run动画，每30秒执行一次*/
+
+        }
+
+ 
+
+        /*设置图像大小、边框、圆角、位置*/
+
+        #photo_box img{
+
+            width: 260px;
+
+            height: 410px;
+
+            border: 2px solid #ccc;
+
+            border-radius: 0px;
+
+            position:absolute;
+
+            left: 0;
+
+            top: 15px;
+
+        }
+
+ 
+
+        /*依次设置图像盒子中每个图像旋转后位置*/
+
+        #photo_box img:nth-child(1){
+
+            transform: rotateY(0deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(2){
+
+            transform: rotateY(33deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(3){
+
+            transform: rotateY(66deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(4){
+
+            transform: rotateY(99deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(5){
+
+            transform: rotateY(132deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(6){
+
+            transform: rotateY(164deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(7){
+
+            transform: rotateY(196deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(8){
+
+            transform: rotateY(228deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(9){
+
+            transform: rotateY(261deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(10){
+
+            transform: rotateY(294deg) translateZ(500px);
+
+        }
+
+        #photo_box img:nth-child(11){
+
+            transform: rotateY(327deg) translateZ(500px);
+
+        }
+
+ 
+
+            /*采用@keyframes 规则创建run动画。*/
+
+        @keyframes run {
+
+            0%{transform: rotateX(0deg) rotateY(0deg);
+
+            }
+
+            25%{transform: rotateX(10deg) rotateY(90deg);
+
+            }
+
+            50%{transform: rotateX(0deg) rotateY(180deg);
+
+            }
+
+            75%{transform: rotateX(-10deg) rotateY(270deg);
+
+            }
+
+            100%{transform: rotateX(0deg) rotateY(360deg);
+
+            }
+
+        }
+
+        #text1 {
+
+            float: left;
+
+            color:#fff;
+
+            width: 150px;
+
+            padding:12px 0;
+
+            height: 50px;
+
+        }
+
+        #text2 {
+
+            float: right;
+
+            width: 100px;
+
+            color:#fff;
+
+            padding:12px 0;
+
+            height: 50px;
+
+        }
+
+        #text3 {
+
+            float: right;
+
+            width: 100px;
+
+            color:#fff;
+
+            padding:12px 0;
+
+            height: 50px;
+
+        }
+	<style type="text/css">
+    body{
+	background: url("../image/首页背景.jpg") no-repeat center center fixed;
+	/*兼容浏览器版本*/
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	}
+    a {
+	color: #78B2D6;
+	text-decoration: none;
+}
+    </style>
+
+</head>
+		
+	
+
+<body>
+	
+<header>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td height="79">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="16%" height="46" align="center" bgcolor="#000000" style="color: #60AABB"><a href="../index.html" class="navindex">首页</a></td>
+        <td width="17%" align="center" bgcolor="#000000" style="color: #60ABBC; padding-top: 0px;"><a href="wlop1.html" class="navwlop">wlop的简介</a></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="intro1.html" class="navintro">作品人物介绍</a></span></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="show1.html" class="navshow">作品展示</a></span></td>
+        <td width="16%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="wel1.html" class="navwel">同人及二创</a></span></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="other1.html" class="navother">技能加持</a></span></td>
+      </tr>
+    </tbody>
+  </table>
+</header>   
+
+<div id="mid" style="height: 500px;"></div>
+	
+
+    <div id="div2" >
+
+        <div id="photo_box">
+
+            <img src="../image/展示1.jpg" class="navzs1">
+
+            <img src="../image/展示2.jpg" class="navzs1">
+
+            <img src="../image/展示3.jpg" class="navzs1">
+
+            <img src="../image/展示4.jpg" class="navzs1">
+
+            <img src="../image/展示5.jpg" class="navzs1">
+
+            <img src="../image/展示6.jpg" class="navzs1">
+
+            <img src="../image/展示7.jpg" class="navzs1">
+
+            <img src="../image/展示8.jpg" class="navzs1">
+
+            <img src="../image/展示9.jpg" class="navzs1">
+
+            <img src="../image/展示10.jpg" class="navzs1">
+
+            <img src="../image/展示11.jpg" class="navzs1">
+
+        </div>
+
+    </div>
+	
+	
+	<div id="foot">
+	<footer>
+	<br><br><br><br><br><br><br><br>
+		<div id="rm" style="height: 80px;width: 100%;float :left; background-color: rgba(80,80,82,0.6);"> <a href="https://wuliwuyi.github.io/rm231323/">
+		<h3 style="font-size: 24px; color: #7896D6; text-align: center;">点击返回寝室主页</h3></a>
+  </div>
+	<hr>
+	
+<div id="fot" style="height: 120px; width: 50%; float: left; color: #95CCD3;">
+	  
+		
+    <h3>想更多了解神仙画师wlop吗？去他的微博看看吧。<br>
+      <a href="https://weibo.com/wlop" target="_blank">点击去往微博地址：https://weibo.com/wlop</a></h3></div>
+	
+	
+	<div id="my" style="height: 120px; width: 50%; float: right; text-align: right; color: #8EC2DA;">		<h4 style="text-align: right; color: #95CCD3;">此网站由冯子潇制作<br>wlop是神仙！！！<br>作为预备程序员我也想拥有wlop的手！<br>所有图片及文字从网上获得，若存在侵权，请联系19900287003删除。
+		</h4>
+		
+  
+	</div>	
+  
+</footer>
+		
+</div>	
+</body>
+
+
+
+</html>

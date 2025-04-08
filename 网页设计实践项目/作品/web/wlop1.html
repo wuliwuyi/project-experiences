@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>wlop的简介</title>
+	<style>
+		
+	body{ background-color:#EFEFEF;}
+	.lanren{width:1000px;overflow:hidden;margin:0 auto;}
+	.flip-3d { 
+	  perspective: 1200px; width: 33%; float: left;  
+	}
+	.flip-3d figure { 
+	  position: relative; 
+	  transform-style: preserve-3d; 
+	  transition: 1s transform;
+	  font-size: 1.6rem;
+	  margin:25px;
+	}
+	.flip-3d figure img { 
+	  width: 100%; height: auto; 
+	}
+	.flip-3d figure figcaption { 
+	  position: absolute; 
+	  width: 100%; height: 100%; top: 0; 
+	  transform: rotateY(.5turn) translateZ(1px); 
+	  background: rgba(255,255,255,0.9); 
+	  text-align: center; 
+	  padding-top: 45%; 
+	  opacity: 0.6; 
+	  transition: 1s .5s opacity; 
+	}
+	.flip-3d:hover figure { transform: rotateY(.5turn); }
+	.flip-3d:hover figure figcaption {
+	opacity: 1;
+	font-size: x-large;
+}
+	.flip-3d figure:after { 
+	  content: " "; display: block;
+	  height: 8vw; width: 100%; 
+	  transform: rotateX(90deg); 
+	  background-image:radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); 
+	}
+	@media screen and (max-width: 800px) { 
+	  #flip-3d { perspective-origin: center top; }
+		div#flip-3d figure { 
+	    float: none; 
+	    width: 50%; 
+	    margin: 0 auto; 
+	    margin-bottom: 12vw; 
+	  }
+	 .flip-3d figure figcaption{font-size: 0.8rem;}
+		div#flip-3d figure:last-child { display: none; }
+		
+	}
+    .navindex {
+	padding-top: 90px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A21.3.0.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 0 20px;
+	padding-bottom: 30px;
+	visibility: visible;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navwlop {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A22.2.0.png);
+	background-repeat: no-repeat;
+	background-position: 0% 15px;
+	background-size: contain;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	padding-bottom: 25px;
+}
+    .navintro {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 90px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A23.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-bottom: 0px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navshow {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 97px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A24.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navindex:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navwlop:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navintro:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navshow:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navwel {
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A25.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0% 5px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navwel:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navother {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A26.5.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0% 28px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	padding-bottom: 22px;
+}
+    .navother:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    </style>
+	<style type="text/css">
+		.par{
+			display:flex;
+		}
+		.par:内容{
+			height:auto;
+		}
+    body{
+	background: url("../image/首页背景.jpg") no-repeat center center fixed;
+	/*兼容浏览器版本*/
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	}
+    a {
+	color: #78B2D6;
+	text-decoration: none;
+}
+    </style>
+</head>
+
+	
+	
+<body>
+<header>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td height="79">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="16%" height="46" align="center" bgcolor="#000000" style="color: #60AABB"><a href="../index.html" class="navindex">首页</a></td>
+        <td width="17%" align="center" bgcolor="#000000" style="color: #60ABBC; padding-top: 0px;"><a href="wlop1.html" class="navwlop">wlop的简介</a></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="show1.html" class="navintro">作品人物介绍</a></span></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="show1.html" class="navshow">作品展示</a></span></td>
+        <td width="16%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="wel1.html" class="navwel">同人及二创</a></span></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="other1.html" class="navother">技能加持</a></span></td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+	<div class="par">
+<div id="左" style="height:300px;width:15%;float:left">
+	</div>
+	<div id="左2" style="background-color: rgba(250,250,250,0.5); height:auto;width:5%;float:left">
+		
+	</div>
+	
+<div id="内容" style="background-color: rgba(250,250,250,0.5); height:auto;width:60%;float:left">
+		<br><br>
+  <h2>个人简介</h2>
+	<h3>&ensp;&ensp;&ensp;&ensp;王凌（WLOP），CG插画师，出生于江苏苏州，毕业于香港大学工学院.有两部漫画作品，《鬼刀》和《云虫》，连载在有妖气。<br><br>
+		&ensp;&ensp;&ensp;&ensp;王凌在大学，学的是信息工程学，和艺术没一点关系。他在大学才开始自学数字艺术，没有一点绘画基础，花大量时间网上自学。
+		<br><br>
+		 &ensp;&ensp;&ensp;&ensp;从起初作品被群嘲，到成为微博账号拥有300万粉丝的神仙画师，王凌逆袭的过程并不顺利。对于王凌来说，因为专业不对口，他也曾经受到了专业人士的无情嘲笑，大到画面的整体色调与氛围，小到画面物件和人物头发，以及服饰上的细节处理，无不被人于骨头里挑刺。不过他并没有当回事，而是坚持不懈的创作，形成了自己的画风，并最终将自己的爱好当成了事业。经过多年的努力之后，由王凌创作的《云虫》横空出世，彻底打破了大家对他的印象，浏览量突破百万。现在的他认为，不是科班出身，是自己的短板，也是自己的长处。没有那些所谓的“基础”的束缚，他反而可以有更多的空间去表达，并跟从自己的内心，将想象与艺术淋漓尽致地结合在一起。
+		<br><br>
+		&ensp;&ensp;&ensp;&ensp;在他人眼里，他是一个拥有着幻想和执念的疯子。可他坚信总有一天能够把自己想象中的东西表达出来。插画在他眼里，只是一种表达方式而已。Wolp说过：“我认为技法应该是服务于想法的，当我觉得一幅画已经可以完整的表达我的想法，我就停笔了。也许不完整但总是停留在最巅峰的时刻，留给人后半段的遐想” 。 所以我们看到wolp的作品的时候，总感觉是不完整的，仿佛留了空间给予人们想想…
+		<br><br>
+		&ensp;&ensp;&ensp;&ensp;对王凌来说，程序员是工作，而画画是兴趣，两者并不矛盾，正因为不靠画画吃饭，所以他才能更好的、没有顾忌的表达自己。王凌不是科班出身，但对于绘画的执着不输任何人，且他摸索出了独具一格的画风，这才是他最值得被称为大神的地方。
+	</h3>
+		<img src="../image/06.jpg" width="100%" height="" alt=""/>
+		
+	<hr>
+		<h2>绘画风格</h2>
+		<h3>&ensp;&ensp;&ensp;&ensp;王凌的绘画作品，多以女性为主角，他十分擅长刻画，女性身上独有的那份，细腻坚韧，以及女性肢体美感。
+			<br><br>
+			&ensp;&ensp;&ensp;&ensp;王凌的画感，轻松自然，光影表现完美，虚实处理恰到好处。使得画面有着极强的，进深感与体量感。
+			<br><br>
+			&ensp;&ensp;&ensp;&ensp;而对于故事中的场景，王凌在构建时，则是极富想象力，大胆的设计中，满是他细腻的浪漫。
+			<br><br>
+			&ensp;&ensp;&ensp;&ensp;王凌的笔触，主要以厚涂为主，画风宏伟而细腻，质感通透，充满了史诗感，其中人物眼神的刻画尤其出众。
+			<br><br>
+			&ensp;&ensp;&ensp;&ensp;不得不说，王凌笔下的女性角色们，都令人无法抵抗，她们具备吸睛的美颜，又被赋予了独特的人格魅力。
+		</h3>
+    <img src="../image/05.jpg" width="100%" height="" alt=""/> 
+	<hr>
+	<h2>代表作品《鬼刀》</h2>
+  <h3>
+	&ensp;&ensp;&ensp;&ensp;《鬼刀》是国内原创绘本漫画，现连载于哔哩哔哩漫画、有妖气漫画，漫画以人类与羽族共同生活的诺拉大陆为故事舞台，讲述了诺拉大陆各方势力的恩怨纠葛。
+	</h3>
+	<h2>主要剧情</h2>
+	<h3>&ensp;&ensp;&ensp;&ensp;故事开端，“血天使”奥斯丁想要“冰公主”海琴烟。海琴王不愿交出冰公主，奥斯丁下了最后通碟。
+		<br>&ensp;&ensp;&ensp;&ensp;人们畏惧圣堂武士，冲入王宫，欲抢走冰公主，鬼刀通过“马斯”的指引，半路杀出，劫走冰公主海琴烟。
+		<br>&ensp;&ensp;&ensp;&ensp;在贫民窟中，两人遇到恶霸强收保护费，要抢走一位交不起保护费的妇女的孩子，海琴烟希望鬼刀可以出手，但鬼刀拒绝了她。于是海琴烟将自己出生时就在身上的项链“冰蓝”给了恶霸。但夜晚海琴烟熟睡时，鬼刀将项链夺了回来，并杀光了恶霸。
+		<br>&ensp;&ensp;&ensp;&ensp;海琴烟的守护骑士，“银白骑士”卡因，通过马斯找到了鬼刀和海琴烟，阻止海琴烟跟鬼刀走，而鬼刀则给了海琴烟两个选择:跟他走还是回去。
+		<br>&ensp;&ensp;&ensp;&ensp;海琴烟选择了和鬼刀一起走。作为冰公主的守护骑士，卡因也一起前往，还有向往冒险的铁匠铺的小男孩马斯也加入了他们。 鬼刀一行在北漠接受挑战，卡因大显身手，云娜战胜漠公主风铃。北王天都出现，与鬼刀交手。 天都被鬼刀几招撩到，打斗期间破坏了场地，此时，洪都的坐骑——皎跑了出来。 海琴烟出现，安抚了皎。
+		<br>……
+
+ </h3>
+	<img src="../image/02.jpg" width="100%" height="" alt=""/><hr> <br><br></div>
+	
+	<div id="右2" style="background-color: rgba(250,250,250,0.5); height:auto;width:5%;float:left">
+		
+	</div>
+	<div id="右" style="height:300px;width:15%;float:left"></div>
+	</div>
+	
+	
+
+	<footer>
+	<br><br><br><br><br><br><br><br>
+		<div id="rm" style="height: 80px;width: 100%;float :left; background-color: rgba(80,80,82,0.6);"> <a href="https://wuliwuyi.github.io/rm231323/">
+		<h3 style="font-size: 24px; color: #7896D6; text-align: center;">点击返回寝室主页</h3></a>
+  </div>
+	<hr>
+	
+<div id="foot" style="height: 120px; width: 50%; float: left; color: #95CCD3;">
+	  
+		
+    <h3>想更多了解神仙画师wlop吗？去他的微博看看吧。<br>
+      <a href="https://weibo.com/wlop" target="_blank">点击去往微博地址：https://weibo.com/wlop</a></h3></div>
+	
+	
+	<div id="my" style="height: 120px; width: 50%; float: right; text-align: right; color: #8EC2DA;">		<h4 style="text-align: right; color: #95CCD3;">此网站由冯子潇制作<br>wlop是神仙！！！<br>作为预备程序员我也想拥有wlop的手！<br>所有图片及文字从网上获得，若存在侵权，请联系19900287003删除。
+		</h4>
+		
+  
+	
+	</div>	
+  
+</footer>
+</body>
+</html>

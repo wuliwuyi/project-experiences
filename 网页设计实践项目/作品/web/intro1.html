@@ -1,0 +1,291 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>作品人物介绍</title>
+	<style>
+		
+	body{ background-color:#EFEFEF;}
+	.lanren{width:1000px;overflow:hidden;margin:0 auto;}
+	.flip-3d { 
+	  perspective: 1200px; width: 33%; float: left;  
+	}
+	.flip-3d figure { 
+	  position: relative; 
+	  transform-style: preserve-3d; 
+	  transition: 1s transform;
+	  font-size: 1.6rem;
+	  margin:25px;
+	}
+	.flip-3d figure img { 
+	  width: 100%; height: auto; 
+	}
+	.flip-3d figure figcaption { 
+	  position: absolute; 
+	  width: 100%; height: 100%; top: 0; 
+	  transform: rotateY(.5turn) translateZ(1px); 
+	  background: rgba(255,255,255,0.9); 
+	  text-align: center; 
+	  padding-top: 45%; 
+	  opacity: 0.6; 
+	  transition: 1s .5s opacity; 
+	}
+	.flip-3d:hover figure { transform: rotateY(.5turn); }
+	.flip-3d:hover figure figcaption {
+	opacity: 1;
+	font-size: x-large;
+}
+	.flip-3d figure:after { 
+	  content: " "; display: block;
+	  height: 8vw; width: 100%; 
+	  transform: rotateX(90deg); 
+	  background-image:radial-gradient(ellipse closest-side, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%); 
+	}
+	@media screen and (max-width: 800px) { 
+	  #flip-3d { perspective-origin: center top; }
+		div#flip-3d figure { 
+	    float: none; 
+	    width: 50%; 
+	    margin: 0 auto; 
+	    margin-bottom: 12vw; 
+	  }
+	 .flip-3d figure figcaption{font-size: 0.8rem;}
+		div#flip-3d figure:last-child { display: none; }
+		
+	}
+    .navindex {
+	padding-top: 90px;
+	padding-left: 40px;
+	padding-right: 40px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A21.3.0.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: 0 20px;
+	padding-bottom: 30px;
+	visibility: visible;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navwlop {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A22.2.0.png);
+	background-repeat: no-repeat;
+	background-position: 0% 15px;
+	background-size: contain;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	padding-bottom: 25px;
+}
+    .navintro {
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 90px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A23.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	padding-bottom: 0px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navshow {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 97px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A24.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navindex:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navwlop:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navintro:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navshow:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navwel {
+	padding-left: 16px;
+	padding-right: 16px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A25.2.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0% 5px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+    .navwel:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    .navother {
+	padding-left: 24px;
+	padding-right: 24px;
+	padding-top: 100px;
+	background-image: url(../image/%E6%AF%94%E4%B8%A26.5.0.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: 0% 28px;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+	padding-bottom: 22px;
+}
+    .navother:hover {
+	background-position: 0;
+	color: #AE92DC;
+}
+    </style>
+	<style type="text/css">
+		
+		.par{
+			display:flex;}
+		.par:mid{
+			height:auto;
+		}
+		
+    body{
+	background: url("../image/首页背景.jpg") no-repeat center center fixed;
+	/*兼容浏览器版本*/
+	-webkit-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	}
+    a {
+	color: #78B2D6;
+	text-decoration: none;
+}
+    </style>
+</head>
+
+	
+	
+<body>
+<header>
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tbody>
+      <tr>
+        <td height="79">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td width="16%" height="46" align="center" bgcolor="#000000" style="color: #60AABB"><a href="../index.html" class="navindex">首页</a></td>
+        <td width="17%" align="center" bgcolor="#000000" style="color: #60ABBC; padding-top: 0px;"><a href="wlop1.html" class="navwlop">wlop的简介</a></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="intro1.html" class="navintro">作品人物介绍</a></span></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="show1.html" class="navshow">作品展示</a></span></td>
+        <td width="16%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="wel1.html" class="navwel">同人及二创</a></span></td>
+        <td width="17%" align="center" bgcolor="#000000"><span style="color: #60ABBC"><a href="other1.html" class="navother">技能加持</a></span></td>
+      </tr>
+    </tbody>
+  </table>
+</header>
+	<div class="par">
+	<div id="左" style="height:300px;width:15%;float:left">
+	</div>
+	
+		
+		<div id="left2" style="background-color: rgba(250,250,250,0.5); height:auto;width:5%;float:left">
+		
+		</div>
+			
+		<div id="mid" style="background-color: rgba(250,250,250,0.5); height:auto;width:60%;float:left">
+  <h1><br>
+    《鬼刀》主要人物介绍 </h1>
+  <p>&nbsp;</p>
+  <h2>海琴烟（冰公主）
+	</h2>
+	<h3>年龄：19 <br>身高：165cm <br>体重：保密 <br>眼睛颜色：深蓝 <br>出生地点：在冰块中出生，感觉不到寒冷 <br>能力：可以和动物交流 <br>从作者微博上看，有一个双胞胎妹妹（萨利娅），会在后面章节中出现。
+		<br><br>&ensp;&ensp;&ensp;&ensp;海琴国国王在冰川里捡到的女孩，非常受国王疼爱，但国民认为她是会带来不幸的怪物，因此非常讨厌她。圣堂的人要国王交出她，国王拒绝之后引发了一场战争。心思单纯善良的她离开了自己的国家，不希望再给人们带来任何伤害。后来在混乱中被鬼刀救下，踏上了寻找自己身世的真相。
+    </h3>
+	<img src="../image/海琴烟.jpg" width="100%" height="" alt=""/>
+	<hr>
+  <h2>鬼刀 </h2>
+  <h3>&ensp;&ensp;&ensp;&ensp;诺拉大陆最恐怖的杀手。曾在黑山之战中斩杀上将魁七，十万铁甲拖不住他一步。也曾以一己之力瓦解了大陆上最大的杀手联盟，当时名震江湖的杀手西凌斯在他手下没能撑过三招。
+		<br>&ensp;&ensp;&ensp;&ensp;没人知道他从何方而来，又往何方而去，人们说他手持一把能召唤死灵的黑色巨刃，逆天而行。被阿修罗称自己给自己戴上了“枷锁”，并执意前往天堂之眼与圣堂武士一战。
+	</h3>
+	<img src="../image/鬼刀.jpg" width="100%" height="" alt=""/>
+	<hr>
+  <h2>风玲</h2>
+  <h3>&ensp;&ensp;&ensp;&ensp;北漠公主，前任北王洪都的独生女。自幼从父习武，武艺高强。聪明伶俐又能歌善舞，曾以一曲风蝶之舞名扬天下。
+		<br>&ensp;&ensp;&ensp;&ensp;在父亲北王洪都的影响之下，风玲自幼就展露出过人的领袖天赋，在北漠极具人气，深得民心。北漠的百姓都称她为“北漠最珍贵的风翡翠”。他们也一致认为，将来风玲会成为北漠的第一个女王。
+		<br>&ensp;&ensp;&ensp;&ensp;其父洪都与鬼刀一战后惨败，后一人前往天堂之眼，被血天使斩杀，其实力仅次于六极。 
+	</h3>
+	<img src="../image/03.jpg" width="100%" height="" alt=""/>
+	<hr>
+  <h2>云娜</h2>
+  <h3>&ensp;&ensp;&ensp;&ensp;近年来在大陆上声名鹊起的一位刺客，武艺高强且精于用毒，暗杀时神出鬼没，从不失手。
+		<br>&ensp;&ensp;&ensp;&ensp;传闻中的她是一名拥有着红发赤眼的美貌少女，好事的人们都希望着能一睹其真容，却又唯恐避之不及—就像那种盛放在大陆西岸，美丽却又致命的毒花—燃焰玫瑰。
+		<br>&ensp;&ensp;&ensp;&ensp;当年云娜是个小女孩时被鬼刀救下，后成为云娜师傅，在鬼刀准备启程去北漠时加入队伍，为报答鬼刀的救命之恩。 
+	</h3>
+			<img src="../image/云娜.jpg" width="100%" height="" alt=""/><hr>
+		  <h2>风曳</h2>
+		  <h3>&ensp;&ensp;&ensp;&ensp;天都的长女，北漠第一公主，北漠现任大督军。风玲的堂姐，也是北漠唯一降得住风玲的人，舞技和武艺都略胜风玲一筹。
+		    <br>&ensp;&ensp;&ensp;&ensp;生性内敛低调，善舞擅骑射，喜欢饲养猫科动物。曾将其父天都密谋篡位之事告知洪都，让北漠幸免内乱。</h3>
+	  <img src="../image/风曳.jpg" width="100%" height="" alt=""/><hr>
+			<h2>小绿</h2>
+		  <h3>&ensp;&ensp;&ensp;&ensp;南风身边的一名剑侍，同时也是南风心爱之人——雨儿的妹妹，现居于南山，武功高强，身世成谜。
+				<br>&ensp;&ensp;&ensp;&ensp;在小绿当时身处的地区，短发、刺青都是风俗的禁忌。所以看似温柔体贴的她绝对不是一个没有故事的姑娘。如果爱她，就接受她所有的过去吧。</h3>
+	  <img src="../image/小绿.jpg" width="100%" height="" alt=""/><hr>
+			<br><br> </div>
+		
+		<div id="right2" style="background-color: rgba(250,250,250,0.5); height:auto;width:5%;float:left">
+		
+	</div>
+	
+	
+
+	
+	
+	<div id="右" style="height:300px;width:15%;float:left"></div>
+	
+	</div>
+	
+<footer>
+	<br><br><br><br><br><br><br><br>
+		<div id="rm" style="height: 80px;width: 100%;float :left; background-color: rgba(80,80,82,0.6);"> <a href="https://wuliwuyi.github.io/rm231323/">
+		<h3 style="font-size: 24px; color: #7896D6; text-align: center;">点击返回寝室主页</h3></a>
+  </div>
+	<hr>
+	
+<div id="foot" style="height: 120px; width: 50%; float: left; color: #95CCD3;">
+	  
+		
+    <h3>想更多了解神仙画师wlop吗？去他的微博看看吧。<br>
+      <a href="https://weibo.com/wlop" target="_blank">点击去往微博地址：https://weibo.com/wlop</a></h3></div>
+	
+	
+	<div id="my" style="height: 120px; width: 50%; float: right; text-align: right; color: #8EC2DA;">		<h4 style="text-align: right; color: #95CCD3;">此网站由冯子潇制作<br>wlop是神仙！！！<br>作为预备程序员我也想拥有wlop的手！<br>所有图片及文字从网上获得，若存在侵权，请联系19900287003删除。
+		</h4>
+		
+  
+	
+	</div>	
+  
+</footer>
+</body>
+</html>
